@@ -29,6 +29,9 @@ class Chambre
     #[ORM\Column(length: 4)]
     private ?string $prixJournalier = null;
 
+    #[ORM\OneToOne(mappedBy: 'chambre', cascade: ['persist', 'remove'])]
+    private ?Commande $commande = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,23 @@ class Chambre
     public function setPrixJournalier(string $prixJournalier): self
     {
         $this->prixJournalier = $prixJournalier;
+
+        return $this;
+    }
+
+    public function getCommande(): ?Commande
+    {
+        return $this->commande;
+    }
+
+    public function setCommande(Commande $commande): self
+    {
+        // set the owning side of the relation if necessary
+        if ($commande->getChambre() !== $this) {
+            $commande->setChambre($this);
+        }
+
+        $this->commande = $commande;
 
         return $this;
     }
