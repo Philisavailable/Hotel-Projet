@@ -39,6 +39,10 @@ class Commande
     #[ORM\JoinColumn(nullable: false)]
     private ?Chambre $chambre = null;
 
+    #[ORM\ManyToOne(inversedBy: 'commandes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Membre $membre = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -136,6 +140,18 @@ class Commande
     public function setChambre(Chambre $chambre): self
     {
         $this->chambre = $chambre;
+
+        return $this;
+    }
+
+    public function getMembre(): ?Membre
+    {
+        return $this->membre;
+    }
+
+    public function setMembre(?Membre $membre): self
+    {
+        $this->membre = $membre;
 
         return $this;
     }
