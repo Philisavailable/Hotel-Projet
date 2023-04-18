@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin | Gestion chambres {% endblock %}
+
+{% block body %}
+    <!-- ///////////////////////TABLEAU/////////////////////// -->
+
+    <table class="table col-10 mx-auto my-5">
+        <thead class="table-dark">
+          <tr>
+            <td>#</td>
+            <td>Titre</td>
+            <td>Description (courte)</td>
+            <td>Description (Longue)</td>
+            <td>Photo</td>
+            <td>Prix (journalié/nuitée)</td>
+            <td>Date Enregistrement</td>
+            <td>Actions</td>
+          </tr>
+        </thead>
+        <tbody class="text-center align-middle">
+          {% for chambre in chambres %}
+            <tr>
+                <td>{{ chambre.id }}</td>
+                <td>{{ chambre.titre }}</td>
+                <td>{{ chambre.descriptionCourte }}</td>
+                <td class="col-2">{{ chambre.descriptionLongue }}</td>
+                <td><img width="150" height="150" class="img-fluid" src="{{ asset('uploads/' ~ chambre.photo) }}" alt="{{ chambre.titre }}"></td>
+                <td>{{ chambre.prixJournalier }} €</td>
+                <td>{{ chambre.createdAt | date('d/m/Y')}}</td>
+                <td>
+                    <a href="{{ path('update_chambre', {'id': chambre.id}) }}"><i class="btn-sm btn-primary bi bi-pencil-square"></i></a>
+                    <a href="{{ path('soft_delete_chambre', {'id': chambre.id}) }}"><i class="btn-sm btn-danger bi bi-trash-fill"></i></a>
+                </td>
+              </tr>
+              {% endfor %}
+        </tbody>
+      </table>
+
+    <!-- ///////////////////////FORM/////////////////////// -->
+
+    <div class="col-8 mx-auto">
+        {{ form_start(form) }}
+        <div class="row">
+          <div class="col-6">{{ form_row(form.titre) }}</div>
+          <div class="col-6">{{ form_row(form.prixJournalier) }}</div>
+        </div>
+        <div class="row">
+          <div class="col-6">{{ form_row(form.descriptionCourte) }}</div>
+          <div class="col-6">{{ form_row(form.photo) }}</div>
+        </div>
+
+        
+        {{ form_end(form) }}
+    </div>
+
+
+{% endblock %}
