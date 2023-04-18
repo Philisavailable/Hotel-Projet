@@ -53,18 +53,26 @@
 					<a class="nav-link" href="#">Actualités</a>
 					{# {{ path('show_actuality') }} #}
 
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="{{ path('create_chambre')}}">Chambre</a></li>
-              <li><a class="dropdown-item" href="#">Slider</a></li>
-              <li><a class="dropdown-item" href="#">Membre</a></li>
-              <li><a class="dropdown-item" href="{{ path('create_commande') }}">Commande</a></li>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<li>
+							<a class="dropdown-item" href="{{ path('create_chambre')}}">Chambre</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('update_slider')}}">Slider</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="#">Membre</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('create_commande') }}">Commande</a>
+						</li>
 
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
