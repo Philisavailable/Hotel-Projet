@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Backoffice | Membres{% endblock %}
+
+
+{% block body %}
+	
+	<div class="row">
+		<div class="col-10 mx-auto">
+            <h1 class="text-center my-4">Membres</h1>
+			<table class="table">
+				<thead>
+					<tr class="text-center">
+						<th>Rôle</th>
+						<th>Mot de passe</th>
+						<th>Prénom</th>
+						<th>Nom</th>
+						<th>Email</th>
+						<th>Civilité</th>
+						<th>Options</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for membre in membres %}
+						<tr class="text-center">
+							<td>{{ membre.roles | first }}</td>
+							<td>{{ membre.password }}</td>
+							<td>{{ membre.prenom }}</td>
+							<td>{{ membre.nom }}</td>
+							<td>{{ membre.email }}</td>
+							<td>{{ membre.civilite }}</td>
+							<td>
+                                <a href="{{ path('upgrade_membre', {'id': membre.id}) }}" class="text-info" title="Modifier la catégorie"><i class="btn btn-primary bi bi-pencil-square"></i></a>
+                                <a href="{{ path('soft_delete_membre', {'id': membre.id}) }}" class="text-danger" title="Archiver la catégorie" onclick="return confirm('Cette action archivera la categorie. Voulez-vous continuer ?')"><i class="btn btn-danger bi bi-trash-fill"></i></a>
+                            </td>
+						</tr>
+					{% endfor %}
+				</tbody>
+            </table>
+			</div>
+		</div>
+
+{% endblock %}
