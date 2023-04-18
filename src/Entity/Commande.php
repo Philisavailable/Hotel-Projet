@@ -14,7 +14,7 @@ class Commande
 {
     use TimestampableEntity;
     use SoftDeleteableEntity;
-    
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -44,7 +44,7 @@ class Commande
     #[ORM\OneToOne(inversedBy: 'commande', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?Chambre $chambre = null;
-  
+
 
     public function getId(): ?int
     {
@@ -146,5 +146,4 @@ class Commande
 
         return $this;
     }
-    
 }
