@@ -2,20 +2,54 @@
 
 namespace App\Controller;
 
+
+
+use App\Entity\Contact;
 use App\Entity\Newsletter;
+use App\Entity\Slider;
 use App\Form\NewsletterFormType;
+use App\Form\HotelContactFromType;
+use App\Repository\SliderRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Entity\Contact;
-use App\Form\HotelContactFromType;
+
 class DefaultController extends AbstractController
 {
     #[Route('/', name: 'show_home', methods: ['GET'])]
-    public function showHome(): Response
+    public function showHome(SliderRepository $sliderRepository): Response
     {
-        return $this->render('default/show_home.html.twig');
+        $sliders = $sliderRepository->findBy([
+            'deletedAt' => null,
+        ]);
+
+
+        //dd($sliders);
+
+        return $this->render('default/show_home.html.twig', [
+            'sliders' => $sliders
+        ]);
+
+        /* $sliders1 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'ch1'
+        ]);
+        $sliders2 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'ch2'
+        ]);
+        $sliders3 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'ch3'
+        ]); 
+
+
+        return $this->render('default/show_home.html.twig', [
+            'sliders1' => $sliders1,
+            'sliders2' => $sliders2,
+            'sliders3' => $sliders3
+        ]);*/
     }
 
     #[Route('/liens_divers/voir-liens', name: 'show_mentions_legales', methods: ['GET'])]
@@ -55,7 +89,7 @@ class DefaultController extends AbstractController
             'form' => $form->createView()
         ]);
     }
-    
+
     #[Route('/restaurant/voir-restaurant', name: 'show_restaurant', methods: ['GET'])]
     public function showRestaurant(): Response
     {
@@ -63,25 +97,25 @@ class DefaultController extends AbstractController
     }
     //////////////////////////////VUE HOTEL//////////////////////////////
 
-        //////////Qui Sommes-nous?//////////
+    //////////Qui Sommes-nous?//////////
 
     #[Route('/hotel/qui-sommes-nous', name: 'presentation_hotel', methods: ['GET'])]
     public function hotelQuiSommesNous(): Response
     {
-        
+
         return $this->render('hotel/presentation_hotel.html.twig');
     }
 
-        //////////Accès//////////
+    //////////Accès//////////
 
     #[Route('/hotel/accedez-a-notre-hotel', name: 'acces_hotel', methods: ['GET'])]
     public function hotelAcces(): Response
     {
-        
+
         return $this->render('hotel/acces_hotel.html.twig');
     }
 
-        //////////Contact//////////
+    //////////Contact//////////
 
     #[Route('/hotel/contactez-nous', name: 'contact_hotel', methods: ['GET', 'POST'])]
     public function hotelContact(): Response
@@ -92,7 +126,7 @@ class DefaultController extends AbstractController
         $form = $this->createForm(HotelContactFromType::class, $contact);
 
         $this->addFlash('success', "Votre message a bien été envoyé, nous reviendrons vers vous dans les plus brefs délais.");
-        
+
 
         return $this->render('hotel/contact_hotel.html.twig', [
             'form' => $form->createView()
@@ -105,7 +139,7 @@ class DefaultController extends AbstractController
     #[Route('/spa/voir-spa', name: 'show_spa', methods: ['GET'])]
     public function showSpa(): Response
     {
-        
+
         return $this->render('/spa/show_spa.html.twig');
     }
 
@@ -113,14 +147,14 @@ class DefaultController extends AbstractController
     #[Route('/spa/voir-spa-detente', name: 'show_spa-detente', methods: ['GET'])]
     public function showSpaDetente(): Response
     {
-        
+
         return $this->render('/spa/spa-detente.html.twig');
     }
     //*****************spa-relaxante************ */
     #[Route('/spa/voir-spa-relaxant', name: 'show_spa-relaxant', methods: ['GET'])]
     public function showSpaRelaxant(): Response
     {
-        
+
         return $this->render('/spa/spa_relaxant.html.twig');
     }
 
@@ -129,8 +163,7 @@ class DefaultController extends AbstractController
     #[Route('/spa/voir-spa-plaisir', name: 'show_spa-plaisir', methods: ['GET'])]
     public function showSpaPlaisir(): Response
     {
-        
+
         return $this->render('spa/spa_plaisir.html.twig');
     }
 }
-
