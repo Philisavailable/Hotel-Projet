@@ -53,9 +53,12 @@ class DefaultController extends AbstractController
         return $this->render('/liens_divers/show_newsletter.html.twig', [
             'form' => $form->createView()
         ]);
+    }
+    
     #[Route('/restaurant/voir-restaurant', name: 'show_restaurant', methods: ['GET'])]
     public function showRestaurant(): Response
     {
         return $this->render('/restaurant/show_restaurant.html.twig');
     }
 }
+
