@@ -22,10 +22,12 @@ class DefaultController extends AbstractController
     {
         $sliders = $sliderRepository->findBy([
             'deletedAt' => null,
+            //'ordre' => 'ch1'
+
         ]);
 
 
-        //dd($sliders);
+        dd($sliders);
 
         return $this->render('default/show_home.html.twig', [
             'sliders' => $sliders
