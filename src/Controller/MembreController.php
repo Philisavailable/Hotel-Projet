@@ -39,7 +39,7 @@ class MembreController extends AbstractController
 
 
 
-        return $this->render('admin/membre.html.twig', [
+        return $this->render('admin/membre/membre.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -63,7 +63,7 @@ class MembreController extends AbstractController
             return $this->redirectToRoute('show_membres');
         }
 
-        return $this->render('admin/membre.html.twig', [
+        return $this->render('admin/membre/membre.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -78,6 +78,6 @@ class MembreController extends AbstractController
 
         // $this->addFlash('success', "L'article " . $article->getTitle() . "a bien été archivé");
 
-        return $this->redirectToRoute('show_membres');
+        return $this->redirectToRoute('/membre/show_membres');
     } 
 }

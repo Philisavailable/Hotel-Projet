@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Restaurant La Marine
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-center my-4">Restaurant La Marine
+	</h1>
+	<div class="row">
+		<div class="col-10 slider">
+        </div>
+		<div class="card col-8 mx-auto">
+			<div class="card-body">
+				<h5 class="card-title text-center">Menu Dégustation</h5>
+				<p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui earum nulla reiciendis repellendus architecto facilis assumenda totam fuga, ipsam ipsum aut adipisci. Commodi deserunt velit est laudantium pariatur nisi numquam.</p>
+				<p class="card-text">
+					<small class="text-body-secondary">Last updated 3 mins ago</small>
+				</p>
+			</div>
+			<img src="{{ asset('uploads/menu-resto.jpg' ) }}" class="card-img-bottom mx-auto" alt="..." style="width:500px">
+		</div>
+
+        <div class="card col-8 mx-auto pb-5">
+			<div class="card-body">
+				<h5 class="card-title text-center">Menu Vins</h5>
+				<p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui earum nulla reiciendis repellendus architecto facilis assumenda totam fuga, ipsam ipsum aut adipisci. Commodi deserunt velit est laudantium pariatur nisi numquam.</p>
+				<p class="card-text">
+					<small class="text-body-secondary">Last updated 3 mins ago</small>
+				</p>
+			</div>
+			<img src="{{ asset('uploads/image-carte-vins.png' ) }}" class="card-img-bottom mx-auto" alt="..." >
+		</div>
+	</div>
+
+
+{% endblock %}
