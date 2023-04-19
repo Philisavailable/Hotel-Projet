@@ -14,13 +14,15 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 
 class SliderController extends AbstractController
 {
-    #[Route('/voir-slider', name: 'app_slider_controler', methods: ['GET', 'POST'])]
+    #[Route('admin/voir-slider', name: 'app_slider_controler', methods: ['GET', 'POST'])]
     public function createSlider(SliderRepository $repository, Request $request, SluggerInterface $slugger, EntityManagerInterface $entityManager): Response
     {
+
         $slider = new Slider();
 
         $form = $this->createForm(SliderFormType::class, $slider)
