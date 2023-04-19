@@ -10,7 +10,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Contact;
 use App\Form\HotelContactFromType;
-
 class DefaultController extends AbstractController
 {
     #[Route('/', name: 'show_home', methods: ['GET'])]
@@ -92,12 +91,8 @@ class DefaultController extends AbstractController
 
         $form = $this->createForm(HotelContactFromType::class, $contact);
 
-
-        if($form->isSubmitted() && $form->isValid()) {
-
-            $this->addFlash('success', "Votre message a bien été envoyé, nous reviendrons vers vous dans les plus brefs délais.");
-
-        }// enf if()
+        $this->addFlash('success', "Votre message a bien été envoyé, nous reviendrons vers vous dans les plus brefs délais.");
+        
 
         return $this->render('hotel/contact_hotel.html.twig', [
             'form' => $form->createView()
