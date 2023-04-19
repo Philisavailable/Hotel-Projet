@@ -1,5 +1,16 @@
-body {
-    background-color: lightgray;
+*, :before, :after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+
+.lien-hotel:hover {
+    color: rgb(215, 161, 24) !important;
+    text-shadow: 1px 1px 1.5px black;
+    transition: ease-in-out 0.2s;
 }
 
 
