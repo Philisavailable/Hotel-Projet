@@ -20,38 +20,25 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'show_home', methods: ['GET'])]
     public function showHome(SliderRepository $sliderRepository): Response
     {
-        $sliders = $sliderRepository->findBy([
+        $sliders1 = $sliderRepository->findOneBy([
             'deletedAt' => null,
-            //'ordre' => 'ch1'
-
-        ]);
-
-
-        dd($sliders);
-
-        return $this->render('default/show_home.html.twig', [
-            'sliders' => $sliders
-        ]);
-
-        /* $sliders1 = $sliderRepository->findOneBy([
-            'deletedAt' => null,
-            'ordre' => 'ch1'
+            'ordre' => 'Ch1'
         ]);
         $sliders2 = $sliderRepository->findOneBy([
             'deletedAt' => null,
-            'ordre' => 'ch2'
+            'ordre' => 'Ch2'
         ]);
         $sliders3 = $sliderRepository->findOneBy([
             'deletedAt' => null,
-            'ordre' => 'ch3'
-        ]); 
+            'ordre' => 'Ch3'
+        ]);
 
 
-        return $this->render('default/show_home.html.twig', [
+        return $this->render('/default/show_home.html.twig', [
             'sliders1' => $sliders1,
             'sliders2' => $sliders2,
             'sliders3' => $sliders3
-        ]);*/
+        ]);
     }
 
     #[Route('/liens_divers/voir-liens', name: 'show_mentions_legales', methods: ['GET'])]
