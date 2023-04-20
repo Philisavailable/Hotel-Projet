@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Chambre;
 use DateTime;
 use App\Entity\Commande;
 use App\Form\CommandeFormType;
@@ -14,30 +15,44 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CommandeController extends AbstractController
 {
+    #[Route('admin/voir-commandes', name: 'show_commande', methods: ['GET'])]
+    public function showCommande(CommandeRepository $repository, Request $request): Response
+    {
+        $commandes = $repository->findAll();
+        return $this->render('admin/commande/show_form_commande.html.twig', [
+            'commandes'=> $commandes
+        ]);
+    }
 
-    #[Route('admin/ajouter-une-commande', name: 'create_commande', methods: ['GET', 'POST'])]
-    public function createCommande(CommandeRepository $repository, Request $request): Response
+
+
+    #[Route('admin/ajouter-une-commande/{id}', name: 'create_commande', methods: ['GET', 'POST'])]
+    public function createCommande(Chambre $chambre, CommandeRepository $repository, Request $request): Response
     {
         $commande = new Commande();
         $form = $this->createForm(CommandeFormType::class, $commande)
             ->handleRequest($request);
+            
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $chambre->setDispo(false);
             $commande->setCreatedAt(new DateTime());
             $commande->setUpdatedAt(new DateTime());
+            $commande->setChambre($chambre);
+
+            $diff = $commande->getDateDebut()->diff($commande->getDateFin())->format('%d%');
+            $prixChambre = $chambre->getPrixJournalier();
+            $prixTotal = $diff * $prixChambre;
+            $commande->setPrixTotal($prixTotal);
 
             $repository->save($commande, true);
             $this->addFlash('success', "La commande  a été ajouté !");
 
-            return $this->redirectToRoute('create_commande');
-
-        
+            return $this->redirectToRoute('show_home');
         }
-        $commandes = $repository->findAll();
-        return $this->render('admin/commande/show_form_commande.html.twig', [
+        
+        return $this->render('render/form_commande.html.twig', [
             'form' => $form->createView(),
-            'commandes'=> $commandes
-            
         ]);
     }
 

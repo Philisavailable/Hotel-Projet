@@ -20,18 +20,17 @@ class CommandeFormType extends AbstractType
         $builder
             ->add('dateDebut',DateType::class,[
                 'label'=>'date de début',
+                'widget' => 'single_text'
             ])
             ->add('dateFin',DateType::class,[
                 'label'=>'date de fin',
-            ])
-            ->add('prixTotal',TextType::class,[
-                'label'=>'prix de chambre',
+                'widget' => 'single_text'
             ])
             ->add('prenom',TextType::class,[
-                'label'=>'contenu'
+                'label'=>'Prénom'
             ])
             ->add('nom',TextType::class,[
-                'label'=>'Nom de commande'
+                'label'=>'Nom'
             ])
             ->add('telephone',TextType::class,[
                 'label'=>'Numero telephone',
@@ -39,9 +38,6 @@ class CommandeFormType extends AbstractType
             ->add('email',EmailType::class,[
                 'label'=>'email',
                     
-            ])
-            ->add('chambre',TextType::class,[
-                'label'=>'les chambres'
             ])
             ->add('submit', SubmitType::class, [
                 'label' => "Valider",

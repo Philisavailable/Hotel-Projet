@@ -2,18 +2,20 @@
 
 namespace App\Controller;
 
-
-
 use App\Entity\Contact;
+use App\Entity\Commande;
 use App\Entity\Newsletter;
+use App\Form\CommandeFormType;
 use App\Form\NewsletterFormType;
 use App\Form\HotelContactFromType;
 use App\Repository\SliderRepository;
+use App\Repository\ChambreRepository;
+use App\Repository\CommandeRepository;
+use Doctrine\ORM\Tools\Console\Command\SchemaTool\CreateCommand;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Repository\ChambreRepository;
 
 class DefaultController extends AbstractController
 {
@@ -166,38 +168,89 @@ class DefaultController extends AbstractController
     }
 
     #[Route('/chambres/voir-chambre-classique', name: 'show_chambre_classique', methods: ['GET'])]
-    public function showChambreClassique(ChambreRepository $repository): Response
+    public function showChambreClassique(ChambreRepository $repository, SliderRepository $sliderRepository,): Response
     {
         $chambre = $repository->findOneBy([
             'deletedAt' => null,
-            'titre' => 'classique'
+            'titre' => 'classique',
+            'dispo' => true
         ]);
+        
+        $sliders1 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'classique1'
+        ]);
+        $sliders2 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'classique2'
+        ]);
+        $sliders3 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'classique3'
+        ]);
+
+
         return $this->render('/chambres/show_chambre.html.twig', [
-            'chambre' => $chambre
+            'chambre' => $chambre,
+            'sliders1' => $sliders1,
+            'sliders2' => $sliders2,
+            'sliders3' => $sliders3,
         ]);
     }
 
+
     #[Route('/chambres/voir-chambre-confort', name: 'show_chambre_confort', methods: ['GET'])]
-    public function showChambreConfort(ChambreRepository $repository): Response
+    public function showChambreConfort(ChambreRepository $repository, SliderRepository $sliderRepository): Response
     {
         $chambre = $repository->findOneBy([
             'deletedAt' => null,
-            'titre' => 'confort'
+            'titre' => 'confort',
+            'dispo' => true
+        ]);
+        $sliders1 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'confort1'
+        ]);
+        $sliders2 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'confort2'
+        ]);
+        $sliders3 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'confort3'
         ]);
         return $this->render('/chambres/show_chambre.html.twig', [
-            'chambre' => $chambre
+            'chambre' => $chambre,
+            'sliders1' => $sliders1,
+            'sliders2' => $sliders2,
+            'sliders3' => $sliders3
         ]);
     }
 
     #[Route('/chambres/voir-chambre_suite', name: 'show_chambre_suite', methods: ['GET'])]
-    public function showChambreSuite(ChambreRepository $repository): Response
+    public function showChambreSuite(ChambreRepository $repository, SliderRepository $sliderRepository): Response
     {
         $chambre = $repository->findOneBy([
             'deletedAt' => null,
-            'titre' => 'suite'
+            'titre' => 'suite',
+            'dispo' => true
+        ]); $sliders1 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'suite1'
+        ]);
+        $sliders2 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'suite2'
+        ]);
+        $sliders3 = $sliderRepository->findOneBy([
+            'deletedAt' => null,
+            'ordre' => 'suite3'
         ]);
         return $this->render('/chambres/show_chambre.html.twig', [
-            'chambre' => $chambre
+            'chambre' => $chambre,
+            'sliders1' => $sliders1,
+            'sliders2' => $sliders2,
+            'sliders3' => $sliders3
         ]);
     }
 }
