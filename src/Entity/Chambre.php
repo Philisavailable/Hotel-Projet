@@ -38,6 +38,9 @@ class Chambre
     #[ORM\OneToOne(mappedBy: 'chambre', cascade: ['persist', 'remove'])]
     private ?Commande $commande = null;
 
+    #[ORM\Column]
+    private ?bool $dispo = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -116,6 +119,18 @@ class Chambre
         }
 
         $this->commande = $commande;
+
+        return $this;
+    }
+
+    public function isDispo(): ?bool
+    {
+        return $this->dispo;
+    }
+
+    public function setDispo(bool $dispo): self
+    {
+        $this->dispo = $dispo;
 
         return $this;
     }

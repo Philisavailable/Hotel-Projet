@@ -6,5 +6,69 @@
 {% block body %}
 
 <h1 class="text-center my-4 mx-auto">{% trans %}ACCUEIL{% endtrans %}</h1>
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner  ">
+				<div class="carousel-item active  ">
+					<img class="w-100" src="{{ asset('uploads/' ~ sliders1.photo) }}" alt="First slide">
+				</div>
+				<div class="carousel-item r ">
+					<img class="w-100" src="{{ asset('uploads/' ~ sliders2.photo) }}" alt="First slide">
+				</div>
+				<div class="carousel-item   ">
+					<img class="w-100" src=" {{ asset('uploads/' ~ sliders3.photo) }} " alt=" first slide">
+				</div>				
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div class='row d-flex justify-content-around'>
+
+		<div class="card text-center " style="width: 18rem;">
+			<img class="border rounded-circle" src="https://static-otelico.com/cache/regina_berck/hotel_regina-berck_sur_mer-chambre_premium_1.jpg" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Chambre</h5>
+				<p class="card-text">Venez découvrir nos chambres pour votre plus grand confort !</p>
+				<a href="{{ path('show_chambres') }}" class="btn btn-primary">Découvrir les chambres</a>
+			</div>
+		</div>
+		<div class="card text-center" style="width: 18rem;">
+			<img class="border rounded-circle" src="https://cdn.groupedelion.com/rb/img/restaurant-bar/restaurant-rois-gastronomique-etoile-l.jpg" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Restaurant</h5>
+				<p class="card-text">Nos plats sont confectionnés à la minute par notre chef cuisinier chaque jour.</p>
+				<a href="{{ path('show_restaurant') }}" class="btn btn-primary">Voir la carte</a>
+			</div>
+		</div>
+		<div class="card text-center" style="width: 18rem;">
+			<img class="border rounded-circle" src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Spa</h5>
+				<p class="card-text">Détendez-vous et offrez vous un massage dont vous vous rappellerez longtemps.</p>
+				<a href="{{ path('show_spa') }}" class="btn btn-primary">Les soins</a>
+			</div>
+		</div>
+
+	</div>
 
 {% endblock %}

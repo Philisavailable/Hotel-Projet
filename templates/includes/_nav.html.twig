@@ -10,7 +10,7 @@
 					<a class="nav-link active" aria-current="page" href="{{ path('show_home') }}">{% trans %}Accueil{% endtrans %}</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">{% trans %}Chambre{% endtrans %}</a>
+					<a class="nav-link" href="{{ path('show_chambres') }}">{% trans %}Chambres{% endtrans %}</a>
 					{# {{ path('show_room') }} #}
 				</li>
 				<li class="nav-item">
@@ -67,7 +67,7 @@
 							<a class="dropdown-item" href="{{ path('show_membres') }}">Membre</a>
 						</li>
 						<li>
-							<a class="dropdown-item" href="{{ path('create_commande') }}">Commande</a>
+							<a class="dropdown-item" href="{{ path('show_commande') }}">Commande</a>
 						</li>
 					</ul>
 				</li>
