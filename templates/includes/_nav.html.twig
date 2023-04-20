@@ -50,7 +50,7 @@
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="#">Actualités</a>
+					<a class="nav-link" href="{{ path('show_actualite1') }}">Actualités</a>
 					{# {{ path('show_actuality') }} #}
 
 				</li>
@@ -68,6 +68,9 @@
 						</li>
 						<li>
 							<a class="dropdown-item" href="{{ path('create_commande') }}">Commande</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('create_actualite') }}">Actualites</a>
 						</li>
 					</ul>
 				</li>
