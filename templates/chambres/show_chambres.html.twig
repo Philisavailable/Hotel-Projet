@@ -1,0 +1,69 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Chambres
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-center my-4">Nos Chambres</h1>
+	<p class=" col-8 mx-auto text-center my-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur eum corrupti nemo vitae ducimus aliquid, culpa deserunt dicta perspiciatis voluptas consectetur perferendis ipsum accusamus maxime quae quis. Eaque, incidunt similique! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo consectetur tempore aut numquam blanditiis nostrum obcaecati, qui debitis. Mollitia accusamus ratione corrupti incidunt iste qui delectus temporibus ipsa ex omnis.</p>
+
+
+	<div class="row">
+
+		<div class="col-10 mx-auto mt-2">
+			<div class="card mb-3 mx-auto" style="max-width: 540px;">
+				<a href="{{ path("show_chambre_classique") }}" class='text-reset text-decoration-none'>
+					<div class="row g-0">
+						<div class="col-md-4">
+							<img src="{{ asset('uploads/chambre-classique.jpg') }}" class="img-fluid rounded-start" alt="...">
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h4 class="card-title">Chambre Classique</h4>
+								<p class="card-text">Profitez de nos chambres classique le temps d'une nuit pour faire une pause.</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+
+		<div class="col-10 mx-auto mt-2">
+			<div class="card mb-3  mx-auto" style="max-width: 540px;">
+				<a href="{{ path("show_chambre_confort") }}" class='text-reset text-decoration-none'>
+					<div class="row g-0">
+						<div class="col-md-8">
+							<div class="card-body">
+								<h4 class="card-title">Chambre Confort</h4>
+								<p class="card-text">Nos chambres confort sont spécialement conçues pour donner pleinement satisfaction.</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<img src="{{ asset('uploads/chambre-confort.jpg') }}" class="img-fluid rounded-start" alt="...">
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+
+		<div class="col-10 mx-auto mt-2">
+			<div class="card mb-3  mx-auto" style="max-width: 540px;">
+				<a href="{{ path("show_chambre_suite") }}" class='text-reset text-decoration-none'>
+					<div class="row g-0">
+						<div class="col-md-4">
+							<img src="{{ asset('uploads/chambre-suite.jpg') }}" class="img-fluid rounded-start" alt="...">
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h4 class="card-title">Chambre Suite</h4>
+								<p class="card-text">Nos suites sont à la fois spacieuse et lumineuse, n'hésitez plus!</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

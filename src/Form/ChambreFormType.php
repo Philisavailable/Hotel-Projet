@@ -24,7 +24,7 @@ class ChambreFormType extends AbstractType
                 'constraints' => [
                     new NotBlank(),
                     new Length([
-                        'min' => 7,
+                        'min' => 4,
                         'max' => 20
                     ])
                 ]
