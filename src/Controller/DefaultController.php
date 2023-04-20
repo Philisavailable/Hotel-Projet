@@ -132,5 +132,17 @@ class DefaultController extends AbstractController
         
         return $this->render('spa/spa_plaisir.html.twig');
     }
+
+    ////////////translation////////////
+    #[Route('/change-locale/{locale}', name: 'change_locale')]
+    public function changeLocale($locale, Request $request)
+    {
+        $request->getSession()->set('_locale', $locale);
+        // dd($request->headers->get('referer'));
+        return $this->redirectToRoute('show_home');
+    }
+
+    ////////////end translation////////////
+
 }
 

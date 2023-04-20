@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="KbRKvl8" resname="Découvrez notre fabuleux HouseHotel">
+        <source>Découvrez notre fabuleux HouseHotel</source>
+        <target>Discover our fabulous House Hotel</target>
+      </trans-unit>
+      <trans-unit id="Jx4lLpr" resname="Par Excellence">
+        <source>Par Excellence</source>
+        <target>Quintessential</target>
+      </trans-unit>
+      <trans-unit id="ocwVHa8" resname="Menu Dégustation">
+        <source>Menu Dégustation</source>
+        <target>"Dégustation" Menu</target>
+      </trans-unit>
+      <trans-unit id="w.L4eHk" resname="Menu Vins">
+        <source>Menu Vins</source>
+        <target>Wine Menu</target>
+      </trans-unit>
+      <trans-unit id="rWS3P1U" resname="Accès">
+        <source>Accès</source>
+        <target>Access</target>
+      </trans-unit>
+      <trans-unit id="9rzkYI2" resname="Venez nous rendre visite">
+        <source>Venez nous rendre visite</source>
+        <target>Come and visit us</target>
+      </trans-unit>
+      <trans-unit id="VBnBSqW" resname="Qui sommes-nous">
+        <source>Qui sommes-nous</source>
+        <target>Who are we</target>
+      </trans-unit>
+      <trans-unit id="zOnAobl" resname="Mentions légales">
+        <source>Mentions légales</source>
+        <target>Legal Notice</target>
+      </trans-unit>
+      <trans-unit id="TM0fBGg" resname="Conditions Générales de Vente">
+        <source>Conditions Générales de Vente</source>
+        <target>Terms of Sales</target>
+      </trans-unit>
+      <trans-unit id="wds64DL" resname="Plan du site">
+        <source>Plan du site</source>
+        <target>Sitemap</target>
+      </trans-unit>
+      <trans-unit id="5UxooUv" resname="Imprimer la page">
+        <source>Imprimer la page</source>
+        <target>Print the page</target>
+      </trans-unit>
+      <trans-unit id="No8zB7y" resname="S'inscrire à la Newsletter">
+        <source>S'inscrire à la Newsletter</source>
+        <target>Subscribe to the newsletter</target>
+      </trans-unit>
+      <trans-unit id="2X6Qoyp" resname="Partage">
+        <source>Partage</source>
+        <target>Share</target>
+      </trans-unit>
+      <trans-unit id="wI4ftob" resname="Êtes-vous administrateur">
+        <source>Êtes-vous administrateur</source>
+        <target>Are you an administrator</target>
+      </trans-unit>
+      <trans-unit id="sYru0ag" resname="Se déconnecter">
+        <source>Se déconnecter</source>
+        <target>Sign out</target>
+      </trans-unit>
+      <trans-unit id="UzFhc1Y" resname="Accueil">
+        <source>Accueil</source>
+        <target>Welcome</target>
+      </trans-unit>
+      <trans-unit id="Pn7xwmS" resname="Avis">
+        <source>Avis</source>
+        <target>Notice</target>
+      </trans-unit>
+      <trans-unit id="K1w9JnI" resname="Contact">
+        <source>Contact</source>
+        <target>Contact Us</target>
+      </trans-unit>
+      <trans-unit id="2iiN0qP" resname="Actualités">
+        <source>Actualités</source>
+        <target>News</target>
+      </trans-unit>
+      <trans-unit id="1OnRRph" resname="ACCUEIL">
+        <source>ACCUEIL</source>
+        <target>WELCOME</target>
+      </trans-unit>
+      <trans-unit id="wiQEBog" resname="Bienvenu dans notre service SPA">
+        <source>Bienvenu dans notre service SPA</source>
+        <target>Welcome to our SPA sercice</target>
+      </trans-unit>
+      <trans-unit id="0hSbc8m" resname="SPA avec soin détente">
+        <source>SPA avec soin détente</source>
+        <target>SPA with "détente" treatment</target>
+      </trans-unit>
+      <trans-unit id="vwwtEHo" resname="SPA avec soin Relaxant">
+        <source>SPA avec soin Relaxant</source>
+        <target>SPA with "Relaxant" treatment</target>
+      </trans-unit>
+      <trans-unit id="eRlqfcU" resname="SPA avec soin plaisir">
+        <source>SPA avec soin plaisir</source>
+        <target>SPA with "Plaisir" treatment</target>
+      </trans-unit>
+      <trans-unit id="poho7pP" resname="Chambre">
+        <source>Chambre</source>
+        <target>Our Rooms</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

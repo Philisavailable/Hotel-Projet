@@ -7,10 +7,10 @@
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="{{ path('show_home') }}">Accueil</a>
+					<a class="nav-link active" aria-current="page" href="{{ path('show_home') }}">{% trans %}Accueil{% endtrans %}</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Chambre</a>
+					<a class="nav-link" href="#">{% trans %}Chambre{% endtrans %}</a>
 					{# {{ path('show_room') }} #}
 				</li>
 				<li class="nav-item">
@@ -29,7 +29,7 @@
 
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Avis</a>
+					<a class="nav-link" href="#">{% trans %}Avis{% endtrans %}</a>
 					{# {{ path('show_notice') }} #}
 
 				</li>
@@ -38,19 +38,19 @@
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hotel</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<li>
-							<a class="dropdown-item" href="{{ path('presentation_hotel') }}">Qui sommes-nous ?</a>
+							<a class="dropdown-item" href="{{ path('presentation_hotel') }}">{% trans %}Qui sommes-nous{% endtrans %} ?</a>
 						</li>
 						<li>
-							<a class="dropdown-item" href="{{ path('acces_hotel') }}">Accès</a>
+							<a class="dropdown-item" href="{{ path('acces_hotel') }}">{% trans %}Accès{% endtrans %}</a>
 						</li>
 						<li>
-							<a class="dropdown-item" href="{{ path('contact_hotel') }}">Contact</a>
+							<a class="dropdown-item" href="{{ path('contact_hotel') }}">{% trans %}Contact{% endtrans %}</a>
 						</li>
 					</ul>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="#">Actualités</a>
+					<a class="nav-link" href="#">{% trans %}Actualités{% endtrans %}</a>
 					{# {{ path('show_actuality') }} #}
 
 				</li>
@@ -72,6 +72,12 @@
 					</ul>
 				</li>
 			</ul>
+			<div class="me-5">
+					<!-- {{ dump(locales) }} -->
+					{% for locale in locales %}
+						<a href="{{ path('change_locale', {'locale': locale}) }}" class="btn-sm ms-auto text-decoration-none text-dark">{{ locale }}</a>
+					{% endfor %}
+			</div>
 		</div>
 	</div>
 </nav>

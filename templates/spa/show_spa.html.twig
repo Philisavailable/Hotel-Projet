@@ -4,7 +4,7 @@
 
 {% block body %}
 
-       <h1 class="text-center my-4"> Bienvenu dans notre service SPA </h1>
+       <h1 class="text-center my-4">{% trans %}Bienvenu dans notre service SPA{% endtrans %}</h1>
 
 
 <div class="card-group">
@@ -12,7 +12,7 @@
     <img height="450" src="{{ asset('uploads/soin-avec-detentejpg-643fb0349b69c.jpg') }}" alt="" class="img-custom">
     
     <div class="card-body">
-      <h5 class="card-title"><a href="{{ path('show_spa-detente') }}">SPA avec soin détente</a></h5>
+      <h5 class="card-title"><a href="{{ path('show_spa-detente') }}">{% trans %}SPA avec soin détente{% endtrans %}</a></h5>
       <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut necessitatibus mollitia fugit, perspiciatis voluptatem ipsam culpa cum laborum. Dolore, placeat commodi quisquam nobis eum eos earum quasi eaque amet saepe..</p>
       <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
     </div>
@@ -21,7 +21,7 @@
     <img height="450" src="{{ asset('uploads/soin-ralaxant-643fb04674c13.jpg') }}" alt="" class="img-custom">
    
     <div class="card-body">
-      <h5 class="card-title"><a href="{{ path('show_spa-relaxant') }}">SPA avec soin Relaxant</a></h5>
+      <h5 class="card-title"><a href="{{ path('show_spa-relaxant') }}">{% trans %}SPA avec soin Relaxant{% endtrans %}</a></h5>
       <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quod animi harum, veritatis libero quis vel ipsa reiciendis eligendi dolorem expedita soluta vero maiores natus, aperiam facere, error obcaecati! Aliquid?</p>
       <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
     </div>
@@ -30,7 +30,7 @@
     <img height="450" src="{{ asset('uploads/le-soin-plaisir-643fb01e2a0c1.png') }}" alt="" class="img-custom">
     
     <div class="card-body">
-      <h5 class="card-title"><a href="{{ path('show_spa-plaisir') }}">SPA avec soin plaisir</a></h5>
+      <h5 class="card-title"><a href="{{ path('show_spa-plaisir') }}">{% trans %}SPA avec soin plaisir{% endtrans %}</a></h5>
       <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur excepturi saepe possimus quo doloribus dolore pariatur! Animi nostrum ratione cupiditate, accusantium esse ut quisquam vel magnam. Nobis cum ea magnam.</p>
       <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
     </div>
