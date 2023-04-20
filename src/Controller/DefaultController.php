@@ -10,6 +10,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Contact;
 use App\Form\HotelContactFromType;
+use App\Repository\ChambreRepository;
+
 class DefaultController extends AbstractController
 {
     #[Route('/', name: 'show_home', methods: ['GET'])]
@@ -55,7 +57,7 @@ class DefaultController extends AbstractController
             'form' => $form->createView()
         ]);
     }
-    
+    // ***********************Vue-Restaurant************************
     #[Route('/restaurant/voir-restaurant', name: 'show_restaurant', methods: ['GET'])]
     public function showRestaurant(): Response
     {
@@ -131,6 +133,50 @@ class DefaultController extends AbstractController
     {
         
         return $this->render('spa/spa_plaisir.html.twig');
+    }
+
+
+    // *****************Vue-Chambres******************************************
+    #[Route('/chambres/voir-chambres', name: 'show_chambres', methods: ['GET'])]
+    public function showChambres(): Response
+    {
+        return $this->render('/chambres/show_chambres.html.twig');
+    }
+
+    #[Route('/chambres/voir-chambre-classique', name: 'show_chambre_classique', methods: ['GET'])]
+    public function showChambreClassique(ChambreRepository $repository): Response
+    {
+        $chambre = $repository->findOneBy([
+            'deletedAt' => null,
+            'titre' => 'classique'
+        ]);
+        return $this->render('/chambres/show_chambre.html.twig', [
+            'chambre' => $chambre
+        ]);
+    }
+
+    #[Route('/chambres/voir-chambre-confort', name: 'show_chambre_confort', methods: ['GET'])]
+    public function showChambreConfort(ChambreRepository $repository): Response
+    {
+        $chambre = $repository->findOneBy([
+            'deletedAt' => null,
+            'titre' => 'confort'
+        ]);
+        return $this->render('/chambres/show_chambre.html.twig', [
+            'chambre' => $chambre
+        ]);
+    }
+
+    #[Route('/chambres/voir-chambre_suite', name: 'show_chambre_suite', methods: ['GET'])]
+    public function showChambreSuite(ChambreRepository $repository): Response
+    {
+        $chambre = $repository->findOneBy([
+            'deletedAt' => null,
+            'titre' => 'suite'
+        ]);
+        return $this->render('/chambres/show_chambre.html.twig', [
+            'chambre' => $chambre
+        ]);
     }
 }
 
