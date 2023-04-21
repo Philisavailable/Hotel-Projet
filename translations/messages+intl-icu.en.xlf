@@ -101,9 +101,49 @@
         <source>SPA avec soin plaisir</source>
         <target>SPA with "Plaisir" treatment</target>
       </trans-unit>
+      <trans-unit id="bXY1IWQ" resname="Chambres">
+        <source>Chambres</source>
+        <target>Rooms</target>
+      </trans-unit>
+      <trans-unit id="Iey.Qz4" resname="Laissez-nous votre avis">
+        <source>Laissez-nous votre avis</source>
+        <target>Leave us your opinion</target>
+      </trans-unit>
+      <trans-unit id="bJWXTYD" resname="à posté">
+        <source>à posté</source>
+        <target>posted</target>
+      </trans-unit>
+      <trans-unit id="aKU0H8a" resname="Catégorie">
+        <source>Catégorie</source>
+        <target>Category</target>
+      </trans-unit>
       <trans-unit id="poho7pP" resname="Chambre">
         <source>Chambre</source>
-        <target>Our Rooms</target>
+        <target>Room</target>
+      </trans-unit>
+      <trans-unit id="2tT5dxF" resname="Venez découvrir nos chambres pour votre plus grand confort">
+        <source>Venez découvrir nos chambres pour votre plus grand confort</source>
+        <target>Come and discover our rooms for your greatest comfort</target>
+      </trans-unit>
+      <trans-unit id="st4u0Fj" resname="Nos plats sont confectionnés à la minute par notre chef cuisinier chaque jour">
+        <source>Nos plats sont confectionnés à la minute par notre chef cuisinier chaque jour</source>
+        <target>Our dishes are made by the minute by our chef every day</target>
+      </trans-unit>
+      <trans-unit id="pGZojvv" resname="Détendez-vous et offrez vous un massage dont vous vous rappellerez longtemps">
+        <source>Détendez-vous et offrez vous un massage dont vous vous rappellerez longtemps</source>
+        <target>Relax and give yourself a massage you will remember for a long time</target>
+      </trans-unit>
+      <trans-unit id="hg7CwEg" resname="Découvrir les chambres">
+        <source>Découvrir les chambres</source>
+        <target>Discover our rooms</target>
+      </trans-unit>
+      <trans-unit id="XieyLVa" resname="Voir la carte">
+        <source>Voir la carte</source>
+        <target>Menu</target>
+      </trans-unit>
+      <trans-unit id="ELlPQnA" resname="Les soins">
+        <source>Les soins</source>
+        <target>Treatments</target>
       </trans-unit>
     </body>
   </file>
