@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CommandeController extends AbstractController
 {
     #[Route('admin/voir-commandes', name: 'show_commande', methods: ['GET'])]
-    public function showCommande(CommandeRepository $repository, Request $request): Response
+    public function showCommande(CommandeRepository $repository): Response
     {
         $commandes = $repository->findAll();
         return $this->render('admin/commande/show_form_commande.html.twig', [
@@ -68,9 +68,6 @@ class CommandeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $commande->setUpdatedAt(new DateTime());
-
-            # L'alias nous servira pour construire l'url d'un article
-
 
             $repository->save($commande, true);
 

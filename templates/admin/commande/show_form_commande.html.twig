@@ -29,13 +29,13 @@
                         
                         <tr class="text-center align-middle">
                             <td>{{ commande.id }}</td>
-                            <td>{{ commande.chambre | capitalize }}</td>
-                            <td>{{ commande.date_debut}} > </td>
-                            <td>{{ commande.date_fin}}</td>
+                            <td>{{ commande.chambre.id }}</td>
+                            <td>{{ commande.dateDebut | date('d/m/y') }}</td>
+                            <td>{{ commande.dateFin | date('d/m/y') }}</td>
                             <td>{{ commande.prenom}}</td>
                             <td>{{ commande.nom }}</td>
-                            <td>{{ commande.email }} €</td>
                             <td>{{ commande.telephone }}</td>
+                            <td>{{ commande.email }}</td>
                             <td>{{ commande.createdAt | date('d/m/y') }}</td>
                             <td>{{ commande.updatedAt | date('d/m/y')}}</td>
                             <td>
