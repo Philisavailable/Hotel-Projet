@@ -31,6 +31,7 @@ class ChambreController extends AbstractController
 
             $chambre->setCreatedAt(new DateTime());
             $chambre->setUpdatedat(new DateTime());
+            $chambre->setDispo(true);
 
 
             /** @var UploadedFile $photo */
@@ -53,6 +54,7 @@ class ChambreController extends AbstractController
         ]);
     } // end createChambre()
 
+    
     #[Route('/admin/modifier-une-chambre/{id}', name: 'update_chambre', methods: ['GET', 'POST'])]
     public function updateChambre(Chambre $chambre, Request $request, ChambreRepository $repo, SluggerInterface $slug, EntityManagerInterface $entityManager): Response
     {
