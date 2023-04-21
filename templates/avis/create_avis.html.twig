@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis | HouseHotel{% endblock %}
+
+{% block body %}
+<div class="col-6 mx-auto my-5 text-center">
+    <h1 class="my-4">Laissez-nous votre avis !</h1>
+
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-6">{{ form_row(form.name)}}</div>
+        <div class="col-6">{{ form_row(form.category)}}</div>
+    </div>
+
+    {{ form_end(form) }}
+
+</div>
+
+<!-- <div class="col-3 mx-auto text-center">
+    <form method="get">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Tous</option>
+
+            {% for avis in catList %}
+            <option>{{ avis.category | title }}</option>
+            {% endfor %}
+
+        </select>
+    </form>
+</div> -->
+
+{% for avis in avisList | reverse %}
+<div class="col-5 mx-auto">
+    <hr>
+    <h4 class="alert-heading">{{ avis.name}} <span class="h6">à posté {{ avis.createdAt | ago(locale='fr') }}</span></h4>
+    <h6><span>Catégorie : {{ avis.category | title}}</span></h6>
+    <p>{{ avis.comment | raw }}</p>
+    <hr>
+</div>
+{% endfor %}
+
+{% endblock %}
