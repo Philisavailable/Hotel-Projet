@@ -34,7 +34,9 @@ class ActualiteController extends AbstractController
         $actualites = $repository->findAll();
         return $this->render('admin/actualite/actualite-form.html.twig', [
             'form' => $form->createView(),
-            'actualites'=> $actualites
+            'actualite'=> $actualite,
+            'actualites'=> $actualites,
+            
             
         ]);
     }
@@ -43,10 +45,8 @@ class ActualiteController extends AbstractController
     #[Route('admin/modifier-une-actualite/{id}', name: 'update_actualite', methods: ['GET', 'POST'])]
     public function updateActualite(Actualite $actualite, Request $request, ActualiteRepository $repository): Response
     {
-        $form = $this->createForm(ActualiteFormType::class, $actualite, [
-            'actualite' => $actualite
-        ])
-            ->handleRequest($request);
+        $form = $this->createForm(ActualiteFormType::class, $actualite)
+        ->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -59,10 +59,12 @@ class ActualiteController extends AbstractController
             $this->addFlash('success', "La actualite est modifiée avec succès !");
             return $this->redirectToRoute('create_actualite');
         }
+        $actualites = $repository->findAll();
 
-        return $this->render('actualite/actualite-form.html.twig', [
+        return $this->render('admin/actualite/actualite-form.html.twig', [
             'form' => $form->createView(),
-            'actualite' => $actualite
+            'actualite' => $actualite,
+            'actualites'=> $actualites,
         ]);
     }
 
