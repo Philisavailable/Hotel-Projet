@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualites {% endblock %}
+
+
+{% block body %}
+       <h1 class="text-center my-4"> HouseHotel, centre-ville</h1>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+            <img  src="{{ asset('uploads/actualite-6440f6398af88.jpg') }}" class="card-img-top" alt="...">
+      
+    <div class="card-body">
+        <h5 class="card-title">LES RENCONTRES  D'OLIVIER BELLAMY & VILLA SAINT-ANGE</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore exercitationem natus, cupiditate repellat debitis soluta nobis fugiat facilis dicta aspernatur beatae possimus atque enim placeat nisi quas dolore quibusdam eum.
+        Repudiandae rerum asperiores dignissimos architecto dolorem perspiciatis eum vel, hic molestias dolor ut, blanditiis earum voluptatibus alias iure illo. Odit error ipsam ipsa eos voluptatem voluptatibus, officiis assumenda. Aut, libero.
+        Odit earum quam numquam, unde enim quae laborum officiis magnam esse sint doloribus excepturi dignissimos delectus nesciunt ipsam non mollitia. Sint, molestias quod repellendus sunt unde reprehenderit odit eum officiis?</p>
+        <a href="{{ path('show_actualite2') }}" class="btn btn-primary">Découvrir</a>
+      
+      </div>
+      
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+            <img src="{{ asset('uploads/actualite1-6440f62f79ba2.jpg') }}" class="card-img-top" alt="...">
+      
+      <div class="card-body">
+        <h5 class="card-title">DÉCOUVRIR LA PROVENCE LORS DE VOTRE SÉJOUR À VILLA SAINT-ANGE </h5>
+        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At libero maiores recusandae nemo ducimus facilis non, maxime iusto magnam quae architecto distinctio tempora dolore quisquam! Dolorum optio nesciunt amet adipisci?
+        Quis harum similique rem nesciunt laborum qui vitae architecto delectus earum eaque quod aspernatur quasi assumenda at eos animi dolorem fuga possimus consequatur libero, nemo sapiente enim cupiditate. Minima, vitae?
+        Illum minus eaque reiciendis illo, eveniet at cumque inventore sunt placeat dignissimos ipsa odio alias fuga nihil cum molestias possimus labore neque corrupti ullam architecto quasi? Ipsum tempora quam debitis!</p>
+        <a href="{{ path('show_actualite3') }}" class="btn btn-primary">Découvrir</a>
+      
+      </div>
+     
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+            <img src="{{ asset('uploads/actualite2-6440f61804409.jpg') }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">EXPOSITION DAVID HOCKNEY AU MUSÉE GRANET À AIX-EN-PROVENCE</h5>
+
+        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At libero maiores recusandae nemo ducimus facilis non, maxime iusto magnam quae architecto distinctio tempora dolore quisquam! Dolorum optio nesciunt amet adipisci?
+        Quis harum similique rem nesciunt laborum qui vitae architecto delectus earum eaque quod aspernatur quasi assumenda at eos animi dolorem fuga possimus consequatur libero, nemo sapiente enim cupiditate. Minima, vitae?
+        Illum minus eaque reiciendis illo, eveniet at cumque inventore sunt placeat dignissimos ipsa odio alias fuga nihil cum molestias possimus labore neque corrupti ullam architecto quasi? Ipsum tempora quam debitis!</p>
+         <a href="{{ path('show_actualite4') }}" class="btn btn-primary text-center">Découvrir</a>
+      
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% endblock %}
+

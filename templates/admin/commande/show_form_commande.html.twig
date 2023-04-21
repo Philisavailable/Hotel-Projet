@@ -4,7 +4,7 @@
 
 {% block body %}
 
- <h1 class="text-center my-4">Ajouter une commande</h1>
+ <h1 class="text-center my-4">Les commande</h1>
 
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     
@@ -42,7 +42,6 @@
                                 
                                 <a href="{{ path('update_commande',{'id': commande.id}) }}" class="btn btn-sm btn-info"><i class="bi bi-pencil-square"></i></a>
                                 <a href="{{ path('delete_commande',{'id': commande.id}) }}" class="btn btn-sm btn-info"><i class="btn btn-danger bi bi-trash-fill"></i></a>
-                                <a href="{{ path('delete_commande',{'id': commande.id}) }}" class="btn btn-sm btn-info"><i class="bi bi-search"></i></a>
                                 
                             </td>
                         
